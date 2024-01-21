@@ -24,3 +24,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#myCarousel {
+  width: 400px;
+  margin: auto;
+}
