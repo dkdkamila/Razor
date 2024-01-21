@@ -3,8 +3,34 @@
 @{
     ViewData["Title"] = "Razor inlämning";
 }
+<div class="text-center">
 <h1>@ViewData["Title"]</h1>
 
 <p>Här visas lösningen på uppgifter</p>
+</div>
+
+<div class="container">
+<h3>Kurser jag har läst:</h3>
+<ul>
+    @foreach (var kurs in new List<string> { "DT057G, Webbutveckling I","DT093G, Webbutveckling II", "DT173G, Webbutveckling III", "DT003G, Databaser"})
+    {
+        <li>@kurs</li>
+    }
+</ul>
+
 <br>
+<h3>Aktuellt datum och klockslag:</h3>
+<p>@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")</p>
+</div>
 <br>
+<div class="container-lg">
+<h3>Kontroll om det är måndag:</h3>
+@if (DateTime.Now.DayOfWeek == DayOfWeek.Monday)
+{
+    <p>Idag är det måndag</p>
+}
+else
+{
+    <p>Idag är det inte måndag</p>
+}
+</div>
